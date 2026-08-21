@@ -1,0 +1,3 @@
+pair_id,fixed_path,moving_path,fixed_label_path,moving_label_path
+example_0001,/absolute/path/to/fixed.nii.gz,/absolute/path/to/moving.nii.gz,,
+

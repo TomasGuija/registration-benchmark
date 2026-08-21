@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dipy-ants-registration-benchmarks"
+version = "0.1.0"
+description = "Reproducible DIPY and ANTs registration benchmarks"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+authors = [{name = "Tomas Guija"}]
+dependencies = [
+    "antspyx==0.6.3",
+    "dipy @ git+https://github.com/dipy/dipy.git@f24b94cd0c9fe82d81bb6247f727921c0e77b889",
+    "nibabel==5.3.3",
+    "numpy==2.3.5",
+    "PyYAML==6.0.3",
+    "scikit-image==0.26.0",
+    "scipy==1.15.3",
+]
+
+[project.optional-dependencies]
+synthseg = ["torch==2.12.0"]
+dev = [
+    "ruff==0.12.12",
+]
+
+[project.scripts]
+registration-benchmark = "registration_benchmark.run:main"
+registration-evaluate = "registration_benchmark.evaluate:main"
+registration-collect = "registration_benchmark.collect:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]

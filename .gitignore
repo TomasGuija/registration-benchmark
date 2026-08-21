@@ -1,0 +1,29 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ruff_cache/
+.uv-cache/
+.uv-tools/
+.venv/
+build/
+dist/
+
+# Datasets, generated pair tables, model caches, and benchmark outputs
+data/*
+!data/.gitkeep
+!data/pairs.example.csv
+outputs/*
+!outputs/.gitkeep
+*.nii
+*.nii.gz
+*.hdr
+*.img
+
+# Cluster logs
+slurm-*.out
+slurm-*.err
+
+# Editors and operating systems
+.DS_Store
+.idea/
+.vscode/

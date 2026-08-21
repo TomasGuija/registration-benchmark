@@ -1,0 +1,9 @@
+name: dipy-ants-benchmarks
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13
+  - git
+  - pip
+  - pip:
+      - -e .
