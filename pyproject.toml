@@ -22,6 +22,7 @@ dependencies = [
 [project.optional-dependencies]
 synthseg = ["torch==2.12.0"]
 dev = [
+    "pytest>=9,<10",
     "ruff==0.12.12",
 ]
 
@@ -32,6 +33,10 @@ registration-collect = "registration_benchmark.collect:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
 
 [tool.ruff]
 line-length = 88

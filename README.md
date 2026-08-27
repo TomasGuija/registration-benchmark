@@ -58,14 +58,14 @@ preparation code:
 
 ### Multimodal registration
 
-The multimodal MI benchmark uses **— samples** from **—**. Dataset preparation
-code: **—**.
+The multimodal MI benchmark uses **100 inter-patient pairs** from the
+annotated **MRBrainS** training subjects. The inputs combine FLAIR, IR, and T1 images.
 
 | Registration stage | Mean NMI | Average SyN time (s) |
 | ------------------ | -------: | ---------------------: |
-| Rigidly prealigned | — | Not applicable |
-| DIPY SyN | — | — |
-| ANTs SyN | — | — |
+| Rigidly prealigned | 1.0173 | Not applicable |
+| DIPY SyN | 1.0382 | 69.22 |
+| ANTs SyN | 1.0348 | 113.64 |
 
 ## Reproducible installation
 
@@ -163,6 +163,7 @@ dataset-pair selection.
 
 ```bash
 python -m pip install -e ".[dev]"
+pytest
 ruff check .
 ```
 
